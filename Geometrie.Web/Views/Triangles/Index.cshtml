@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Geometrie.Triangle>
+
+<a asp-action="Ajouter" class="btn btn-success">Ajouter un triangle</a>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Points
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>@item</td>
+        </tr>
+    }
+</table>

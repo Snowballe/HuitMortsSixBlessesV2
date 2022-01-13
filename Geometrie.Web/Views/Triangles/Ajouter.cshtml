@@ -1,0 +1,36 @@
+﻿@model Geometrie.Web.ViewModels.TriangleVM
+
+
+<h1>Ajouter un triangle</h1>
+
+<form asp-action="Ajouter">
+    <h4>Point 1</h4>
+    <label asp-for="X1"></label>
+    <input asp-for="X1" /><span asp-validation-for="X1"></span>
+    <br />
+    <label asp-for="Y1"></label>
+    <input asp-for="Y1" /><span asp-validation-for="Y1"></span>
+    <br />
+
+    <h4>Point 2</h4>
+    <label asp-for="X2"></label>
+    <input asp-for="X2" /><span asp-validation-for="X2"></span>
+    <br />
+    <label asp-for="Y2"></label>
+    <input asp-for="Y2" /><span asp-validation-for="Y2"></span>
+    <br />
+
+    <h4>Point 3</h4>
+    <label asp-for="X3"></label>
+    <input asp-for="X3" /><span asp-validation-for="X3"></span>
+    <br />
+    <label asp-for="Y3"></label>
+    <input asp-for="Y3" /><span asp-validation-for="Y3"></span>
+    <br />
+
+    <input type="submit" value="OK" class="btn btn-primary" />
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
