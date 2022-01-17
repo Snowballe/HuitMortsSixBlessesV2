@@ -101,12 +101,12 @@ namespace HuitMortsSixBlesses.DAL
 
             return item;
         }
-        public Adherent_DAL GetByIDPanier(Adherent_DAL adherent)
+        public Adherent_DAL GetByIDPanier(int ID)
         {
             CreerConnexionEtCommande();
 
             commande.CommandText = "select id, nom, id_panier from Adherent where id_panier=@IdPanier";
-            commande.Parameters.Add(new SqlParameter("@IdPanier", adherent.ID_PANIER));
+            commande.Parameters.Add(new SqlParameter("@IdPanier", ID));
             var reader = commande.ExecuteReader();
 
 
@@ -118,7 +118,7 @@ namespace HuitMortsSixBlesses.DAL
                                         reader.GetInt32(2));
             }
             else
-                throw new Exception($"Pas d'adhérent dans la BDD avec l'ID de panier {adherent.ID_PANIER}");
+                throw new Exception($"Pas d'adhérent dans la BDD avec l'ID de panier {ID}");
 
             DetruireConnexionEtCommande();
 

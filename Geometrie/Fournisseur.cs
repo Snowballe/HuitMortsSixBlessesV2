@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HuitMortsSixBlesses
 {
-    internal class Fournisseur
+    public class Fournisseur
     {
         public int ID { get; set; }
         public int IDPANIER { get; set; }

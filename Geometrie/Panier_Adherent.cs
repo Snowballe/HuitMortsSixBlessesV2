@@ -11,12 +11,29 @@ namespace HuitMortsSixBlesses
         public bool EstValide { get; private set; }
         public int IDADHERENT { get; set; }
 
-        public Panier_Adherent(int idadh, Panier monPanier)
-            :base(monPanier.lesLignes)
+        public Panier_Adherent(int idadh, List<Ligne> mesLignesAdherent)
+            : base(mesLignesAdherent)
         {
-            monPanier.ArrangerPanier(monPanier.lesLignes);
-            EstValide = true;
+
+            for (int i = 0; i < mesLignesAdherent.Count; i++)
+                for (int j = 0; j < mesLignesAdherent.Count; j++)
+                    mesLignesAdherent[i].EviterDoublon(mesLignesAdherent[j]);
+
+
+
             IDADHERENT = idadh;
+            EstValide = true;
+        }
+        public Panier_Adherent(int idadh, Panier Monpanier)
+            : base(Monpanier.lesLignes)
+        {
+
+            Monpanier.ArrangerPanier(Monpanier.lesLignes);
+
+
+
+            IDADHERENT = idadh;
+            EstValide = true;
         }
 
 

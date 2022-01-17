@@ -39,7 +39,7 @@ namespace HuitMortsSixBlesses.DAL
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "select ID, dateCreation, dateModification from Polygones where ID=@ID";
+            commande.CommandText = "select ID, created_at from Panier where ID=@ID";
             commande.Parameters.Add(new SqlParameter("@ID", ID));
             var reader = commande.ExecuteReader();
 
@@ -49,10 +49,11 @@ namespace HuitMortsSixBlesses.DAL
 
             if (reader.Read())
             {
-                var points = depotPoint.GetAllByIDPanier(reader.GetInt32(0));
+                var lignes = depotPoint.GetByid_panier(reader.GetInt32(0));
 
                 p = new Panier_DAL(reader.GetInt32(0),
-                                        points);
+                                        reader.GetDateTime(1),
+                                        lignes);
             }
             else
             {

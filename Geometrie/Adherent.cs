@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HuitMortsSixBlesses
 {
-    internal class Adherent
+    public class Adherent
     {
         public int ID { get; set; }
         public int IDPANIER { get; set; }
@@ -18,6 +18,12 @@ namespace HuitMortsSixBlesses
             ID= id;
             IDPANIER= idPanier;
             NOM= nom;
+
+        }
+        public Adherent( int idPanier, string nom)
+        {
+            IDPANIER = idPanier;
+            NOM = nom;
 
         }
         public override string ToString() => $"[{string.Join(";", this)}]";
