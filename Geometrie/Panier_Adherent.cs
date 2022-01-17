@@ -37,9 +37,6 @@ namespace HuitMortsSixBlesses
         }
 
 
-        public override void SendToGlobalPanier()//todo
-        {
-            var p = new Panier_Global(this);
-        }
+        
     }
 }

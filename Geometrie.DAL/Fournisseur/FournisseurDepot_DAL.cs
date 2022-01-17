@@ -88,12 +88,26 @@ namespace HuitMortsSixBlesses.DAL
 
             return item;
         }
-        public Fournisseur_DAL GetByIDPanier(Fournisseur_DAL Fournisseur)
+        public List<int> GetAllPanierIDs()
+        {
+            CreerConnexionEtCommande();
+            commande.CommandText = "select id_panier from Fournisseur";
+            var reader = commande.ExecuteReader();
+            var ids = new List<int>();
+            while (reader.Read())
+            {
+                var id = reader.GetInt32(0);
+                ids.Add(id);
+            }
+            return ids;
+        }
+
+        public Fournisseur_DAL GetByIDPanier(int id)
         {
             CreerConnexionEtCommande();
 
             commande.CommandText = "select id, nom, id_panier from Fournisseur where id_panier=@IdPanier";
-            commande.Parameters.Add(new SqlParameter("@IdPanier", Fournisseur.ID_PANIER));
+            commande.Parameters.Add(new SqlParameter("@IdPanier", id));
             var reader = commande.ExecuteReader();
 
 
@@ -105,7 +119,7 @@ namespace HuitMortsSixBlesses.DAL
                                         reader.GetInt32(2));
             }
             else
-                throw new Exception($"Pas d'adhérent dans la BDD avec l'ID de panier {Fournisseur.ID_PANIER}");
+                throw new Exception($"Pas d'adhérent dans la BDD avec l'ID de panier {id}");
 
             DetruireConnexionEtCommande();
 
