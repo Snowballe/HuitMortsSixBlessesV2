@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HuitMortsSixBlesses
 {
-    public class HuitMortsSixBlessesService : IHuitMortsSixBlessesService
+    public class HuitMortsSixBlessesService
     {
         private PanierDepot_DAL depotP = new PanierDepot_DAL();
         private LigneDepot_DAL depotL = new LigneDepot_DAL();
@@ -294,26 +294,12 @@ namespace HuitMortsSixBlesses
         }
 
         
-           
-
-
-
-            //var paniersIDGlobal = depotGlobal.GetAllPanierIDs();
-            //foreach (var item in paniersIDGlobal)
-            //{
-            //    var v = depotP.GetByID(item);
-
-            //}
-            return lglobal;
-
-
-
-        }
         public Panier_Global Insert(Panier_Global p)
         {
             var panier = new Panier_DAL(p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Insert(panier);
             p.ID = panier.ID;
+
             return p;
         }
 
@@ -330,21 +316,6 @@ namespace HuitMortsSixBlesses
             depotP.Delete(panier);
         }
         #endregion  
-
-
-
-
-
-
-        public List<Panier> GetAllPaniers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Panier> GetCurrentPaniers()
-        {
-            throw new NotImplementedException();
-        }
 
     }
 }

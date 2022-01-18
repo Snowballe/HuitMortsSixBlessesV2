@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HuitMortsSixBlesses
 {
     /// <summary>
-    /// Représente un <see cref="Panier_Global"/> dans un repère à 2 dimensions
+    /// Représente un <see cref="Panier_Global"/> qui comprends tous les paniers (Adhérent comme Fournisseur)
     /// </summary>
     public class Panier_Global : Panier
     {
