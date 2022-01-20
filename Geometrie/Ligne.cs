@@ -53,7 +53,7 @@ namespace HuitMortsSixBlesses
         #region constructeur
 
         /// <summary>
-        /// Construit un point
+        /// Construit une ligne
         /// </summary>
         /// <param name="quantite">la quantite du produit le la ligne par rapport à la référence</param>
         public Ligne(int quantite, int id_panier,string reference, string marque)

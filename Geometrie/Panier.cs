@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace HuitMortsSixBlesses
 {
     /// <summary>
-    /// Représente un point dans un repère à 2 dimensions
+    /// Représente un panier composé de lignes
     /// </summary>
     public abstract class Panier : IEnumerable<Ligne>
     {
@@ -74,13 +74,13 @@ namespace HuitMortsSixBlesses
 
         public void ArrangerPanier(List<Ligne> maListedeLignes)//Je veux que chaque ligne regarde si elle a des doublons dans son panier
         {
-            int cpt=0;
+       
             for (int i = 0; i < maListedeLignes.Count; i++)
             {
                 for (int j = 0; j < maListedeLignes.Count; j++)
                 {
                     maListedeLignes[j].EviterDoublon(maListedeLignes[i]);
-                    cpt++;
+                    
                 }
             }
             

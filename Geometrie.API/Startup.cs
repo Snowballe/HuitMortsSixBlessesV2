@@ -30,10 +30,10 @@ namespace HuitMortsSixBlesses.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Geometrie.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HuitMortsSixBlesses.API", Version = "v1" });
             });
 
-            services.AddSingleton(typeof(IHuitMortsSixBlessesService), new GeometrieService());
+            services.AddSingleton(typeof(IHuitMortsSixBlessesService), new HuitMortsSixBlessesService());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +43,7 @@ namespace HuitMortsSixBlesses.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Geometrie.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HuitMortsSixBlesses.API v1"));
             }
 
             app.UseHttpsRedirection();
