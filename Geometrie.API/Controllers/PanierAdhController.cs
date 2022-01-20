@@ -1,4 +1,4 @@
-﻿using Geometrie.DTO;
+﻿using HuitMortsSixBlesses.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,31 +8,36 @@ using System.Threading.Tasks;
 namespace HuitMortsSixBlesses.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class TrianglesController : Controller
+    [Route("[PanierAdherent]")]
+    public class PanierAdhController : Controller
     {
         private IHuitMortsSixBlessesService service;
 
-        public TrianglesController(IHuitMortsSixBlessesService srv)
+        public PanierAdhController(IHuitMortsSixBlessesService srv)
         {
             service = srv;
         }
 
 
         [HttpGet]
-        public IEnumerable<Panier_DTO> GetAllTriangles()
+        public IEnumerable<PanierAdh_DTO> GetAllPanierAdh()
         {
             //je transforme mes triangles en triangle DTO
-            return service.GetAllTriangles().Select(t=>new Panier_DTO()
+            return service.GetAllPanierAdherent().Select(t => new PanierAdh_DTO()
             {
-                ID = t.ID,
-                X1 = t[0].X,
-                Y1 = t[0].Y,
-                X2 = t[1].X,
-                Y2 = t[1].Y,
-                X3 = t[2].X,
-                Y3 = t[2].Y,
-            });
+                ID=t.ID,
+                ID_Adherent=t.IDADHERENT,
+                LignesGlobales=t.lesLignes,
+                LigneEnum=
+
+
+                //X1 = t[0].X,
+                //Y1 = t[0].Y,
+                //X2 = t[1].X,
+                //Y2 = t[1].Y,
+                //X3 = t[2].X,
+                //Y3 = t[2].Y,
+            }) ;
         }
 
         [HttpPost]

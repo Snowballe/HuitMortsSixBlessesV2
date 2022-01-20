@@ -1,13 +1,14 @@
 ﻿using HuitMortsSixBlesses.DAL;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HuitMortsSixBlesses
 {
-    public class HuitMortsSixBlessesService
+    public class HuitMortsSixBlessesService : IHuitMortsSixBlessesService
     {
         private PanierDepot_DAL depotP = new PanierDepot_DAL();
         private LigneDepot_DAL depotL = new LigneDepot_DAL();
@@ -108,14 +109,14 @@ namespace HuitMortsSixBlesses
 
         public Panier_Adherent Update(Panier_Adherent p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Update(panier);
             return p;
         }
 
         public void Delete(Panier_Adherent p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Delete(panier);
         }
 
@@ -213,14 +214,14 @@ namespace HuitMortsSixBlesses
 
         public Panier_Fournisseur Update(Panier_Fournisseur p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Update(panier);
             return p;
         }
 
         public void Delete(Panier_Fournisseur p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Delete(panier);
         }
         #endregion
@@ -305,17 +306,48 @@ namespace HuitMortsSixBlesses
 
         public Panier_Global Update(Panier_Global p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Update(panier);
             return p;
         }
 
         public void Delete(Panier_Global p)
         {
-            var panier = new Panier_DAL(p.ID, null, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
+            var panier = new Panier_DAL(p.ID, p.Select(p => new Ligne_DAL(p.QUANTITE, p.REFERENCE, p.MARQUE)));
             depotP.Delete(panier);
         }
-        #endregion  
+        public Panier_Global GetCurrentPaniers()
+        {//Je veux prendre les paniers qui sont dans la semaine ou l'on est présentement
+            var templlist = new List<Ligne>();
 
+            var dt = DateTime.Now;
+            Calendar cal = new CultureInfo("fr-FR").Calendar;
+            int Currentweek = cal.GetWeekOfYear(dt, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+
+            var Paniers = depotP.GetAll();
+            foreach (var item in Paniers)
+            {
+                int weekToCompare = cal.GetWeekOfYear(item.CREATEDAT, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+
+                if (Currentweek == weekToCompare)
+                {
+                    foreach (var ligne in item.LIGNES)
+                    {
+                        var l = new Ligne(ligne.QUANTITE, ligne.ID_PANIER, ligne.REFERENCE, ligne.MARQUE);
+                        templlist.Add(l);
+                    }
+
+
+
+                }
+            }
+            var p = new Panier_Global(templlist);
+            return p;
+        }
+
+        
+
+
+        #endregion
     }
 }
