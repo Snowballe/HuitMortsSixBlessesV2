@@ -54,18 +54,18 @@ namespace HuitMortsSixBlesses.API.Client
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Triangle_DTO>> TrianglesAllAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PanierAdh_DTO>> PanierAdhAllAsync()
         {
-            return TrianglesAllAsync(System.Threading.CancellationToken.None);
+            return PanierAdhAllAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Triangle_DTO>> TrianglesAllAsync(System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<PanierAdh_DTO>> PanierAdhAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/Triangles");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/PanierAdherent");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -99,7 +99,7 @@ namespace HuitMortsSixBlesses.API.Client
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Triangle_DTO>>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<PanierAdh_DTO>>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -128,18 +128,18 @@ namespace HuitMortsSixBlesses.API.Client
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<Triangle_DTO> TrianglesAsync(Triangle_DTO body)
+        public System.Threading.Tasks.Task<PanierAdh_DTO> PanierAdhAsync(PanierAdh_DTO body)
         {
-            return TrianglesAsync(body, System.Threading.CancellationToken.None);
+            return PanierAdhAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<Triangle_DTO> TrianglesAsync(Triangle_DTO body, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PanierAdh_DTO> PanierAdhAsync(PanierAdh_DTO body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/Triangles");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/PanierAdh");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -176,7 +176,7 @@ namespace HuitMortsSixBlesses.API.Client
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<Triangle_DTO>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<PanierAdh_DTO>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);

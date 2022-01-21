@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <StartupObject>HuitMortsSixBlesses.WPF.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Geometrie.API\Geometrie.API.csproj" />
+    <ProjectReference Include="..\Geometrie.DTO\HuitMortsSixBlesses.DTO.csproj" />
     <ProjectReference Include="..\HuitMortsSixBlesses.DTO\HuitMortsSixBlessesHuitMortsSixBlesses.DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Fonts\" />
   </ItemGroup>
 
 </Project>

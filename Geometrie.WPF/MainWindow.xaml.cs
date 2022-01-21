@@ -1,4 +1,4 @@
-﻿using Geometrie.API.Client;
+﻿using HuitMortsSixBlesses.API.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,9 +33,14 @@ namespace HuitMortsSixBlesses.WPF
             var clientApi = new Client("https://localhost:44319/", new HttpClient());
 
             //le async et le await c'est de la programmation asynchrone en C#
-            var triangles = await clientApi.TrianglesAllAsync();
+            var triangles = await clientApi.PanierAdhAllAsync();
 
-            liste.ItemsSource = triangles;
+            
+        }
+
+        private void BtnSignin(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
