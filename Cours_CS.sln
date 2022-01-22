@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses", "Geometrie\HuitMortsSixBlesses.csproj", "{3B1534B8-BDCC-4D41-845D-93CBAB14DD22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses", "HuitMortsSixBlesses\HuitMortsSixBlesses.csproj", "{3B1534B8-BDCC-4D41-845D-93CBAB14DD22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.DAL", "Geometrie.DAL\HuitMortsSixBlesses.DAL.csproj", "{3413D9B4-8389-4F9E-A080-A7B85CC37560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.DAL", "HuitMortsSixBlesses.DAL\HuitMortsSixBlesses.DAL.csproj", "{3413D9B4-8389-4F9E-A080-A7B85CC37560}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie.Web", "Geometrie.Web\Geometrie.Web.csproj", "{A795C7D2-2734-4195-A0B0-BE59191461D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.Web", "HuitMortsSixBlesses.Web\HuitMortsSixBlesses.Web.csproj", "{A795C7D2-2734-4195-A0B0-BE59191461D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie.API", "Geometrie.API\Geometrie.API.csproj", "{E867029B-3FD1-4C24-BAD0-C21DDF055678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.API", "HuitMortsSixBlesses.API\HuitMortsSixBlesses.API.csproj", "{E867029B-3FD1-4C24-BAD0-C21DDF055678}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.DTO", "Geometrie.DTO\HuitMortsSixBlesses.DTO.csproj", "{55104696-D13D-48C8-B231-FD42B1F35515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.DTO", "HuitMortsSixBlesses.DTO\HuitMortsSixBlesses.DTO.csproj", "{55104696-D13D-48C8-B231-FD42B1F35515}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.WPF", "Geometrie.WPF\HuitMortsSixBlesses.WPF.csproj", "{2A7E7571-CBF6-4BA1-B0F8-39182AB6A41A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{55104696-D13D-48C8-B231-FD42B1F35515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55104696-D13D-48C8-B231-FD42B1F35515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55104696-D13D-48C8-B231-FD42B1F35515}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A7E7571-CBF6-4BA1-B0F8-39182AB6A41A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A7E7571-CBF6-4BA1-B0F8-39182AB6A41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A7E7571-CBF6-4BA1-B0F8-39182AB6A41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A7E7571-CBF6-4BA1-B0F8-39182AB6A41A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
