@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses", "HuitMortsSixBlesses\HuitMortsSixBlesses.csproj", "{3B1534B8-BDCC-4D41-845D-93CBAB14DD22}"
 EndProject
@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.API", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuitMortsSixBlesses.DTO", "HuitMortsSixBlesses.DTO\HuitMortsSixBlesses.DTO.csproj", "{55104696-D13D-48C8-B231-FD42B1F35515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{DACB5CE6-52BD-468E-900A-53B8EEA0D91C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
