@@ -24,5 +24,11 @@ namespace WpfApp3
         {
             InitializeComponent();
         }
+
+        private void YesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -94,7 +94,8 @@
                     FontSize="14"
                     FontWeight="Medium" Height="37" Width="138"
                     Background="#FF934F"
-                        Margin="20,0,0,0">
+                        Margin="20,0,0,0"
+                         Click="btnSignup_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="12"/>
